@@ -30,7 +30,7 @@ export class ListComponent {
     })
   }
 
-  onEdit() {
-    this.router.navigateByUrl('/edit-product');
+  onEdit(productId: string) {
+    this.router.navigate([`/edit-product/${productId}`]);
   }
 }
