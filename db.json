@@ -1,16 +1,8 @@
 {
   "products": [
     {
-      "title": "Tênis",
-      "id": "1"
-    },
-    {
       "title": "Moletom",
       "id": "0421"
-    },
-    {
-      "title": "Camisa",
-      "id": "4d9e"
     },
     {
       "title": "Calça",
@@ -23,6 +15,14 @@
     {
       "id": "27fa",
       "title": "Short"
+    },
+    {
+      "id": "1b97",
+      "title": "Camisa"
+    },
+    {
+      "id": "b624",
+      "title": "Tênis"
     }
   ]
 }
