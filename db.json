@@ -1,28 +1,3 @@
 {
-  "products": [
-    {
-      "title": "Calça",
-      "id": "d63b"
-    },
-    {
-      "title": "Jaqueta",
-      "id": "7433"
-    },
-    {
-      "id": "27fa",
-      "title": "Short"
-    },
-    {
-      "id": "1b97",
-      "title": "Camisa"
-    },
-    {
-      "id": "b624",
-      "title": "Tênis"
-    },
-    {
-      "id": "176c",
-      "title": "Moletom"
-    }
-  ]
+  "products": []
 }

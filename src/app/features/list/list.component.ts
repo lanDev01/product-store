@@ -9,11 +9,12 @@ import { ProductsService } from '../../shared/services/products.service';
 import { DialogService } from '../../shared/services/dialog.service';
 
 import type { Product } from '../../shared/models/product.model';
+import { NoItemsComponent } from '../../shared/components/no-items/no-items.component';
 
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterLink, MatButtonModule],
+  imports: [CardComponent, RouterLink, MatButtonModule, NoItemsComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
