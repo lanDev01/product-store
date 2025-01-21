@@ -1,4 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit()" class="container">
+  <a [routerLink]="link()" class="link-button" align="end" mat-button routerLinkActive="router-link-active">Voltar</a>
 
   <mat-form-field>
     <mat-label>Título</mat-label>

@@ -1,3 +1,16 @@
 {
-  "products": []
+  "products": [
+    {
+      "id": "b896",
+      "title": "Camisa"
+    },
+    {
+      "id": "b496",
+      "title": "Tênis"
+    },
+    {
+      "id": "0772",
+      "title": "Bolsa"
+    }
+  ]
 }
