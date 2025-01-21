@@ -1,13 +1,14 @@
-import { HttpClient } from '@angular/common/http';
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
-import { ProductsService } from '../../shared/services/products.service';
-import { CardComponent } from './components/card/card.component';
-import type { Product } from '../../shared/models/product.model';
-import { Router, RouterLink } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
+
+import { MatButtonModule } from '@angular/material/button';
+import { CardComponent } from './components/card/card.component';
+
+import { ProductsService } from '../../shared/services/products.service';
 import { DialogService } from '../../shared/services/dialog.service';
+
+import type { Product } from '../../shared/models/product.model';
 
 @Component({
   selector: 'app-list',
@@ -17,7 +18,7 @@ import { DialogService } from '../../shared/services/dialog.service';
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
-  products: Product[] = [];
+  products = signal<Product[]>(inject(ActivatedRoute).snapshot.data['products']);
   router = inject(Router);
   productsService = inject(ProductsService);
   matDialog = inject(DialogService);
@@ -29,7 +30,7 @@ export class ListComponent {
   getProducts() {
     this.productsService.getAllProducts().subscribe({
       next: (response) => {
-        this.products = response;
+        this.products.set(response)
       }
     })
   }
