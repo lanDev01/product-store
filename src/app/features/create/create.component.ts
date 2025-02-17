@@ -1,9 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ProductsService } from '../../shared/services/products.service';
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from '@angular/router';
 import { FormComponent } from '../../shared/components/form/form.component';
-import { Product } from '../../shared/models/product.model';
+import type { Product } from '../../shared/models/product.model';
 
 @Component({
   selector: 'app-create',
@@ -14,7 +13,6 @@ import { Product } from '../../shared/models/product.model';
 })
 export class CreateComponent {
   productService = inject(ProductsService);
-  matSnackBar = inject(MatSnackBar);
   router = inject(Router);
 
   onSubmit(product: Product) {
@@ -22,10 +20,10 @@ export class CreateComponent {
 
     if (title === '') return
 
-    this.productService.post(product).subscribe(() => {
-      this.matSnackBar.open('Produto criado com sucesso!', 'Ok');
+    // this.productService.post(product).subscribe(() => {
+    //   this.matSnackBar.open('Produto criado com sucesso!', 'Ok');
 
-      this.router.navigateByUrl('/');
-    })
+    //   this.router.navigateByUrl('/');
+    // })
   }
 }

@@ -1,10 +1,10 @@
-<mat-card appearance="outlined">
-  <mat-card-header>
-    <mat-card-title>{{ productTitle() }}</mat-card-title>
-  </mat-card-header>
+<div class="container">
+  <header>
+    <h3>{{ productTitle() }}</h3>
+  </header>
 
-  <mat-card-actions>
+  <div class="wrapper-options">
     <button mat-button (click)="edit.emit()">Editar</button>
     <button mat-button (click)="delete.emit()">Deletar</button>
-  </mat-card-actions>
-</mat-card>
+  </div>
+</div>

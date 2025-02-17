@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import type { Routes } from '@angular/router';
 import { ListComponent } from './features/list/list.component';
 import { getProducts } from './shared/resolvers/get-products.resolver';
 import { getProduct } from './shared/resolvers/get-product.resolver';

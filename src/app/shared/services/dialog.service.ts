@@ -1,37 +1,36 @@
 import { ChangeDetectionStrategy, Component, inject, Injectable } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { filter } from 'rxjs/operators';
 import { ProductsService } from './products.service';
-import { Observable } from 'rxjs';
+import type { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-confirmation-dialog',
   standalone: true,
   template: `
     <h2 mat-dialog-title>Deletar produto</h2>
-    <mat-dialog-content>
+    <h2>
       Tem certeza que deseja deletar este produto?
-    </mat-dialog-content>
-    <mat-dialog-actions align="end">
-      <button mat-button (click)="onNo()">Não</button>
-      <button mat-button (click)="onYes()" color="primary" cdkFocusInitial>Sim</button>
-    </mat-dialog-actions>
+    </h2>
+    <div class="end">
+
+      <!-- <button mat-button (click)="onNo()">Não</button>
+      <button mat-button (click)="onYes()" color="primary" cdkFocusInitial>Sim</button> -->
+    </div>
   `,
-  imports: [MatDialogModule, MatButtonModule],
+  imports: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmationDialogComponent {
-  readonly dialogRef = inject(MatDialogRef<ConfirmationDialogComponent>);
-  matDialogRef = inject(MatDialogRef);
+  // readonly dialogRef = inject(MatDialogRef<ConfirmationDialogComponent>);
+  // matDialogRef = inject(MatDialogRef);
 
-  onNo() {
-    this.matDialogRef.close(false);
-  }
+  // onNo() {
+  //   this.matDialogRef.close(false);
+  // }
 
-  onYes() {
-    this.matDialogRef.close(true);
-  }
+  // onYes() {
+  //   this.matDialogRef.close(true);
+  // }
 }
 
 @Injectable({
@@ -39,11 +38,9 @@ export class ConfirmationDialogComponent {
 })
 export class DialogService {
   productsService = inject(ProductsService);
-  matDialog = inject(MatDialog);
+  // matDialog = inject(MatDialog);
 
-  constructor() { }
-
-  openDialog(): Observable<boolean> {
-    return this.matDialog.open(ConfirmationDialogComponent).afterClosed()
-  }
+  // openDialog(): Observable<boolean> {
+  //   return this.matDialog.open(ConfirmationDialogComponent).afterClosed()
+  // }
 }

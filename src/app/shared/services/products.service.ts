@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import type { Product } from '../models/product.model';
-import { Observable } from 'rxjs';
-import { ProductPayload } from '../models/create-product.model';
+import type { Observable } from 'rxjs';
+import type { ProductPayload } from '../models/create-product.model';
 
 @Injectable({
   providedIn: 'root'

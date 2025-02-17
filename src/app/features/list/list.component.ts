@@ -2,7 +2,6 @@ import { Component, inject, signal } from '@angular/core';
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { filter } from 'rxjs';
 
-import { MatButtonModule } from '@angular/material/button';
 import { CardComponent } from './components/card/card.component';
 
 import { ProductsService } from '../../shared/services/products.service';
@@ -14,11 +13,12 @@ import { NoItemsComponent } from '../../shared/components/no-items/no-items.comp
 @Component({
   selector: 'app-list',
   standalone: true,
-  imports: [CardComponent, RouterLink, MatButtonModule, NoItemsComponent],
+  imports: [CardComponent, RouterLink, NoItemsComponent],
   templateUrl: './list.component.html',
   styleUrl: './list.component.scss'
 })
 export class ListComponent {
+  // biome-ignore lint/complexity/useLiteralKeys: <explanation>
   products = signal<Product[]>(inject(ActivatedRoute).snapshot.data['products']);
   router = inject(Router);
   productsService = inject(ProductsService);
@@ -41,12 +41,12 @@ export class ListComponent {
   }
 
   onDelete(productId: string) {
-    this.matDialog.openDialog()
-      .pipe(filter(answer => answer === true))
-      .subscribe((answer) => {
-        this.productsService.delete(productId).subscribe(() => {
-          this.getProducts();
-        })
-      })
+    // this.matDialog.openDialog()
+    //   .pipe(filter(answer => answer === true))
+    //   .subscribe((answer) => {
+    //     this.productsService.delete(productId).subscribe(() => {
+    //       this.getProducts();
+    //     })
+    //   })
   }
 }
