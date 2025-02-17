@@ -4,11 +4,10 @@ import { RouterLink } from '@angular/router';
 import type { Product } from '../../models/product.model';
 
 @Component({
-  selector: 'app-form',
-  standalone: true,
-  imports: [ReactiveFormsModule, RouterLink],
-  templateUrl: './form.component.html',
-  styleUrl: './form.component.scss'
+    selector: 'app-form',
+    imports: [ReactiveFormsModule, RouterLink],
+    templateUrl: './form.component.html',
+    styleUrl: './form.component.scss'
 })
 export class FormComponent {
 

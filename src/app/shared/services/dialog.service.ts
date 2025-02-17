@@ -4,9 +4,8 @@ import { ProductsService } from './products.service';
 import type { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-confirmation-dialog',
-  standalone: true,
-  template: `
+    selector: 'app-confirmation-dialog',
+    template: `
     <h2 mat-dialog-title>Deletar produto</h2>
     <h2>
       Tem certeza que deseja deletar este produto?
@@ -17,8 +16,8 @@ import type { Observable } from 'rxjs';
       <button mat-button (click)="onYes()" color="primary" cdkFocusInitial>Sim</button> -->
     </div>
   `,
-  imports: [],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ConfirmationDialogComponent {
   // readonly dialogRef = inject(MatDialogRef<ConfirmationDialogComponent>);

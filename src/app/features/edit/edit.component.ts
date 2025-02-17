@@ -5,11 +5,10 @@ import type { Product } from '../../shared/models/product.model';
 import { FormComponent } from '../../shared/components/form/form.component';
 
 @Component({
-  selector: 'app-edit',
-  standalone: true,
-  imports: [FormComponent],
-  templateUrl: './edit.component.html',
-  styleUrl: './edit.component.scss'
+    selector: 'app-edit',
+    imports: [FormComponent],
+    templateUrl: './edit.component.html',
+    styleUrl: './edit.component.scss'
 })
 export class EditComponent {
   productService = inject(ProductsService);

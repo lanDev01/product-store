@@ -5,11 +5,10 @@ import { FormComponent } from '../../shared/components/form/form.component';
 import type { Product } from '../../shared/models/product.model';
 
 @Component({
-  selector: 'app-create',
-  standalone: true,
-  imports: [FormComponent],
-  templateUrl: './create.component.html',
-  styleUrl: './create.component.scss'
+    selector: 'app-create',
+    imports: [FormComponent],
+    templateUrl: './create.component.html',
+    styleUrl: './create.component.scss'
 })
 export class CreateComponent {
   productService = inject(ProductsService);

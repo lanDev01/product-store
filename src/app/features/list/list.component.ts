@@ -11,11 +11,10 @@ import type { Product } from '../../shared/models/product.model';
 import { NoItemsComponent } from '../../shared/components/no-items/no-items.component';
 
 @Component({
-  selector: 'app-list',
-  standalone: true,
-  imports: [CardComponent, RouterLink, NoItemsComponent],
-  templateUrl: './list.component.html',
-  styleUrl: './list.component.scss'
+    selector: 'app-list',
+    imports: [CardComponent, RouterLink, NoItemsComponent],
+    templateUrl: './list.component.html',
+    styleUrl: './list.component.scss'
 })
 export class ListComponent {
   // biome-ignore lint/complexity/useLiteralKeys: <explanation>
